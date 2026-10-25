@@ -1,5 +1,5 @@
 // Centralized API configuration for the Express Backend (server.js on port 4000)
-export const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000';
+export const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://finpulse-gm1n.onrender.com';
 
 export const API_ENDPOINTS = {
   // Mounted at app.use("/api/users", userRouter)
