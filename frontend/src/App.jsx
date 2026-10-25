@@ -63,7 +63,7 @@ import {
 } from 'recharts';
 
 const DEFAULT_API_CONFIG = {
-  baseUrl: 'http://localhost:4000',
+  baseUrl: 'https://finpulse-gm1n.onrender.com',
   endpoints: {
     login: '/api/users/login',
     register: '/api/users/register',
@@ -148,7 +148,9 @@ const MONTH_NAMES = [
 const WEEKDAYS = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
 
 function buildApiUrl(baseUrl, endpointPath) {
-  const cleanBase = String(baseUrl || 'http://localhost:4000').replace(/\/+$/, '');
+  const cleanBase = String(
+  baseUrl || 'https://finpulse-gm1n.onrender.com'
+).replace(/\/+$/, '');
   const cleanPath = String(endpointPath || '').startsWith('/') ? endpointPath : `/${endpointPath}`;
   return `${cleanBase}${cleanPath}`;
 }
