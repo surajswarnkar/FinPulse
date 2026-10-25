@@ -592,20 +592,8 @@ export default function App() {
         };
 
         const [remoteIncomes, remoteExpenses] = await Promise.all([
-          fetchList([
-            apiConfig.endpoints.getIncome,
-            '/api/income',
-            '/api/income/all',
-            '/api/income/get-income',
-            '/api/income/overview'
-          ]),
-          fetchList([
-            apiConfig.endpoints.getExpense,
-            '/api/expense',
-            '/api/expense/all',
-            '/api/expense/get-expense',
-            '/api/expense/overview'
-          ])
+          fetchList(['/api/income/get']),
+          fetchList(['/api/expense/get'])
         ]);
 
         if (remoteIncomes) {
