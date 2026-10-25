@@ -867,22 +867,12 @@ export default function App() {
       };
 
       const candidateEndpoints = txModal.editingId
-        ? isIncome
-          ? [`/api/income/update/${txModal.editingId}`, `/api/income/${txModal.editingId}`]
-          : [`/api/expense/update/${txModal.editingId}`, `/api/expense/${txModal.editingId}`]
-        : isIncome
-          ? [
-              apiConfig.endpoints.addIncome,
-              '/api/income',
-              '/api/income/add-income',
-              '/api/income/create'
-            ]
-          : [
-              apiConfig.endpoints.addExpense,
-              '/api/expense',
-              '/api/expense/add-expense',
-              '/api/expense/create'
-            ];
+  ? isIncome
+    ? [`/api/income/update/${txModal.editingId}`]
+    : [`/api/expense/update/${txModal.editingId}`]
+  : isIncome
+    ? ['/api/income/add']
+    : ['/api/expense/add'];
 
       for (const ep of candidateEndpoints) {
         try {
